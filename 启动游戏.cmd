@@ -1,0 +1,15 @@
+@echo off
+cd /d "%~dp0"
+where node >nul 2>nul
+if errorlevel 1 (
+  echo Node.js was not found. Install Node.js 22.12 or newer, then try again.
+  pause
+  exit /b 1
+)
+if not exist "dist\index.html" (
+  echo Build files are missing. Follow README.md to install and build the game.
+  pause
+  exit /b 1
+)
+node tools\serve.mjs
+pause

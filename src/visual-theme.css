@@ -1,0 +1,203 @@
+/* 雾港守备所：战场外的界面采用平面军务档案，而非通用卡片仪表盘。 */
+:root {
+  font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif;
+  color: #e4e5d7;
+  background: #0b171a;
+  --muted: #9baea7;
+  --line: #3e5553;
+  --gold: #d5ac70;
+  --green: #a6c5ae;
+  --panel: #142528;
+  --purple: #c5a9d7;
+}
+
+body { background: #0b171a; }
+button { border-radius: 2px; }
+button:hover { background: #294039; border-color: #a7bd9c; }
+input { border-radius: 2px; background: #0c1e22; border-color: #405755; font-size: 13px; }
+input::placeholder { color: #8a9b95; }
+
+.masthead { height: 62px; padding: 0 30px; background: #101d20; border-bottom: 1px solid #4b5d56; }
+.brand { gap: 10px; font-size: 16px; letter-spacing: 2px; font-weight: 600; }
+.brand-mark { width: 35px; height: 35px; border-radius: 1px; color: #161e1c; background: #d0ac73; border: 0; font-family: "Songti SC", SimSun, serif; font-weight: 700; }
+.brand small { color: #9fae9e; font-size: 9px; letter-spacing: 2px; margin-top: 0; }
+.header-center { color: #b4c1b1; letter-spacing: 1px; }
+.header-actions { gap: 16px; }
+.sim-badge { color: #c3b89d; background: transparent; border: 0; border-left: 1px solid #667467; border-radius: 0; padding: 2px 0 2px 13px; font-size: 11px; }
+.quiet-button { color: #c5d0be; font-size: 12px; }
+
+main { max-width: 1540px; padding: 28px 30px 26px; }
+.page-heading { margin-bottom: 25px; align-items: end; }
+.eyebrow { font-family: "Microsoft YaHei", sans-serif; color: #b9aa86; font-size: 11px; letter-spacing: 2px; }
+.page-heading h1 { font-family: "Songti SC", SimSun, serif; font-size: 38px; font-weight: 700; letter-spacing: 3px; line-height: 1.2; margin-top: 11px; }
+.page-heading h1 span { font-family: "Microsoft YaHei", sans-serif; font-size: 13px; color: #adbaad; letter-spacing: .4px; vertical-align: middle; }
+.chapter span { color: #b09e7c; font-family: inherit; font-size: 11px; letter-spacing: 1px; }
+.chapter strong { color: #d2d9c9; font-size: 12px; }
+
+.dashboard { background: #142528; border: 1px solid #49605c; border-radius: 0; margin-bottom: 23px; }
+.stat { min-height: 104px; gap: 17px; padding: 17px 23px; }
+.stat + .stat:before { height: 58px; background: #455955; }
+.stat-icon { font-size: 27px; color: #d2ac75; }
+.muted-icon { color: #a6bcb0; }
+.stat label { color: #afbeb2; font-size: 12px; letter-spacing: .3px; margin-bottom: 5px; }
+.stat strong { color: #f1ecd9; font-size: 34px; font-weight: 600; letter-spacing: 0; }
+.stat strong small { color: #9cb1a5; font-size: 14px; }
+.stat-note { color: #9bad9d; font-size: 11px; }
+.meter { height: 5px; background: #314744; border-radius: 0; }
+.meter i { border-radius: 0; background: #a7c5a8; }
+.energy-stat .meter { height: 5px; background: #493f52; }
+.energy-stat small { color: #aebcae; font-size: 10px; }
+
+.battle-progress { margin: 0 0 16px; gap: 12px; }
+.battle-progress ol { gap: 0; }
+.battle-progress li { border-top: 1px solid #5c6b60; gap: 7px; padding: 9px 6px 2px; color: #9ead9f; }
+.battle-progress li + li { border-left: 1px solid #32443f; }
+.battle-progress li span { font-size: 11px; color: #bba87d; opacity: 1; }
+.battle-progress li b { font-size: 11px; }
+.battle-progress li.current { border-top: 3px solid #e7ba72; padding-top: 7px; color: #f0d5a2; background: #8c71421c; }
+.battle-progress li.past { border-top: 3px solid #8fba96; padding-top: 7px; color: #b5c9b4; }
+#wave-next { color: #c5d1bf; font-size: 11px; }
+
+.workspace { grid-template-columns: minmax(0, 1fr) 325px; gap: 15px; }
+.arena-card, .control-card, .feed-card, .contribution-card { border-radius: 0; border: 1px solid #49605c; background: #142528; }
+.arena-toolbar { background: #1c302f; border-bottom-color: #51665b; height: 52px; padding: 0 16px; }
+.arena-toolbar b { font-family: "Songti SC", SimSun, serif; color: #ece7d4; font-size: 16px; font-weight: 700; letter-spacing: 1px; }
+.arena-coordinate { color: #d4b884; font: 11px Consolas, monospace; padding-right: 12px; border-right: 1px solid #627469; }
+.arena-tag { color: #becab8; font-size: 11px; padding: 0; border: 0; border-radius: 0; }
+.arena-tools button { font-size: 11px; color: #d0d9c8; border-color: #64776a; padding: 6px 9px; }
+.game-shell { background: #10242a; }
+.command-guide { background: #152827; color: #b3c3b3; font-size: 11px; padding: 14px 17px; }
+kbd { color: #e3c691; background: #32433a; border: 1px solid #697963; border-radius: 1px; font-size: 11px; }
+.tactical-strip { background: #26352e; border-top: 2px solid #b29a6c; min-height: 68px; padding: 13px 17px; }
+.tactical-icon { color: #e0bf84; }
+.tactical-strip b { color: #f2e4c7; font-size: 13px; font-weight: 600; }
+.tactical-strip span:last-child { color: #c4d2be; font-size: 11px; line-height: 1.5; }
+
+.center-overlay { background: #09181ac7; backdrop-filter: blur(1px); }
+.intro-panel, .result-panel { position: relative; border: 1px solid #9e9876; border-radius: 0; background: #17282b; box-shadow: 10px 10px 0 #071316a8; }
+.intro-panel { padding: 32px 40px 29px; min-width: 400px; }
+.intro-panel::before, .result-panel::before { content: ""; position: absolute; left: -1px; top: -1px; width: 64px; height: 4px; background: #d7ad70; }
+.intro-kicker { color: #d1ba8f; font: 11px "Microsoft YaHei", sans-serif; letter-spacing: 2px; }
+.intro-panel h2 { font-family: "Songti SC", SimSun, serif; color: #f3ead1; font-size: 40px; line-height: 1.35; letter-spacing: 2px; font-weight: 700; margin: 18px 0 14px; }
+.intro-panel p { color: #bfcdc0; font-size: 13px; line-height: 1.9; }
+.intro-foot { color: #a8b8a7; font-size: 10px; }
+.primary { background: #d3ae73; color: #192420; border-color: #edca8d; border-radius: 2px; font-size: 13px; box-shadow: none; }
+.primary:hover { background: #efc887; }
+.secondary { background: transparent; color: #e3ead7; border-color: #81917c; border-radius: 2px; font-size: 12px; }
+.result-panel { background: #17282b; }
+.result-panel h2 { font-family: "Songti SC", SimSun, serif; color: #f4ead1; font-size: 31px; font-weight: 700; }
+.result-numbers strong { color: #e5bf82; }
+.result-panel > p, .result-ranks { color: #c0cdbb; }
+.vote-panel { border-radius: 0; border-color: #d7b376; background: #1c302e; }
+.vote-panel p { color: #d2ddcb; font-size: 12px; }
+.vote-options button { border-radius: 1px; background: #32493c; color: #e3ead7; font-size: 12px; }
+.vote-options span { color: #c0d1b6; }
+
+.control-card { padding: 20px; }
+.card-heading h2 { font-family: "Songti SC", SimSun, serif; color: #f0e8d3; font-size: 22px; font-weight: 700; letter-spacing: 0; margin-top: 7px; }
+.card-heading .eyebrow { color: #c2af84; font-size: 10px; }
+.small-tag { color: #b6c5b2; font-size: 10px; border-color: #6d856f; border-radius: 1px; }
+.control-intro { color: #c0ccbf; font-size: 12px; margin: 12px 0 18px; }
+.identity { background: #102024; border-color: #465d57; border-radius: 0; padding: 13px; }
+.identity label { color: #b8c6b5; font-size: 11px; }
+.identity label button { color: #e0c28f; font-size: 11px; }
+.identity input { background: #172b2e; border-color: #526961; border-radius: 1px; color: #e9ebdf; font-size: 12px; height: 35px; }
+.identity input:first-of-type { color: #b0c7b9; }
+.identity > span { color: #b1c4b1; font-size: 10px; }
+.section-label { color: #e6e8d7; font-size: 13px; margin: 20px 0 10px; }
+.section-label > span { color: #e4bd83; font-size: 11px; }
+.section-label small { color: #b3c4b2; font-size: 10px; }
+.tower-choices { gap: 6px; }
+.tower-choice { position: relative; background: #1b3232; border: 1px solid #577069; border-radius: 0; padding: 11px 3px 12px; min-height: 102px; }
+.tower-choice::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: currentColor; opacity: .7; }
+.tower-choice:hover { background: #2a4240; }
+.tower-choice.selected { background: #3b4937; border-color: #e3bd7d; }
+.tower-choice.selected::after { content: "已部署"; position: absolute; top: 5px; right: 4px; font-size: 8px; color: #ecd6a9; }
+.tower-choice.selected:disabled { opacity: 1; }
+.tower-choice b { color: #e7eadc; font-size: 13px; font-weight: 600; margin: 6px 0 2px; }
+.tower-choice small { color: #b6c4b7; font-size: 10px; }
+.tower-symbol { display: block; width: 42px; height: 42px; }
+.tower-symbol svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: square; stroke-linejoin: miter; }
+.lane-choices button { color: #e0e8d7; background: #213933; border-color: #5d7363; border-radius: 0; font-size: 12px; padding: 10px 0; }
+.lane-choices button.selected { color: #f5deae; background: #45533c; border-color: #d2ad70; }
+.cheer-button { background: #342f40; border-color: #8c7897; border-radius: 0; color: #e3c7ee; }
+.cheer-button b { color: #e9d5ef; font-size: 13px; }
+.cheer-button small { color: #c5b3d0; font-size: 10px; }
+#chat-form label { color: #c2cfbd; font-size: 11px; }
+.chat-input input { font-size: 12px; }
+.chat-input button { color: #1d2b20; background: #c9d2a0; border-radius: 1px; }
+.input-feedback { color: #b4c8b1; font-size: 11px; min-height: 40px; }
+.auto-control { border-top-color: #506357; }
+.auto-control b { color: #d0d8c8; font-size: 11px; }
+.auto-control small { color: #9cb09d; font-size: 10px; }
+
+.bottom-grid { gap: 15px; margin-top: 15px; }
+.feed-card, .contribution-card { padding: 18px 20px; }
+.bottom-title h2 { color: #e5e6d5; font-family: "Songti SC", SimSun, serif; font-size: 16px; font-weight: 700; }
+.bottom-title > span { color: #a6b8a9; font-size: 11px; }
+.feed-row, .leader-row { font-size: 12px; }
+.feed-row time { color: #9db2a5; font-size: 11px; }
+.feed-row b, .leader-row b { color: #e3e6d4; }
+.feed-row > span, .leader-row > span:last-child { color: #b6c6b9; }
+.upgrade-summary { color: #afc1aa; font-size: 11px; }
+.diagnostics { border-style: solid; border-color: #3a5048; border-radius: 0; }
+.diagnostics summary { color: #a4b5a5; font-size: 11px; }
+footer { color: #839b8d; font-size: 10px; }
+dialog { border-radius: 0; background: #1b302d; color: #e3e9d8; }
+dialog h2 { font-family: "Songti SC", SimSun, serif; font-weight: 700; }
+dialog p, dialog li { color: #c7d6c5; }
+
+@media (max-width: 1180px) {
+  .workspace { grid-template-columns: minmax(0, 1fr) 290px; }
+  .control-card { padding: 15px; }
+  .stat { padding: 14px; }
+  .stat strong { font-size: 29px; }
+  .chapter { display: none; }
+}
+
+@media (max-width: 900px) {
+  .workspace { grid-template-columns: 1fr; }
+  .control-card { grid-template-columns: 1fr 1fr; }
+  .tower-choice { min-height: 94px; }
+}
+
+@media (max-width: 580px) {
+  .masthead { height: 57px; padding: 0 12px; }
+  .brand { font-size: 14px; }
+  .brand-mark { width: 30px; height: 30px; }
+  .sim-badge { font-size: 9px; padding-left: 8px; }
+  .header-actions { gap: 6px; }
+  main { padding: 20px 12px; }
+  .page-heading { margin-bottom: 18px; }
+  .page-heading h1 { font-size: 29px; }
+  .page-heading h1 span { font-size: 11px; margin-top: 7px; }
+  .dashboard { margin-bottom: 17px; }
+  .stat { min-height: 87px; gap: 8px; }
+  .stat label { font-size: 10px; }
+  .stat strong { font-size: 27px; }
+  .battle-progress { display: block; }
+  .battle-progress ol { grid-template-columns: repeat(6, 1fr); }
+  .battle-progress li { display: block; padding: 7px 2px 0; min-width: 0; text-align: center; }
+  .battle-progress li b { display: none; }
+  #wave-next { display: block; text-align: left; margin-top: 8px; }
+  .arena-coordinate { display: none; }
+  .arena-toolbar b { font-size: 13px; }
+  .arena-tools button { padding: 5px; font-size: 10px; }
+  .intro-panel { width: 88%; min-width: 0; padding: 20px; }
+  .intro-panel h2 { font-size: 28px; }
+  .intro-panel p { font-size: 11px; }
+  .intro-foot { font-size: 9px; }
+  .control-card { padding: 16px; }
+  .card-heading h2 { font-size: 20px; }
+  .tower-symbol { width: 36px; height: 36px; }
+  .tower-choice { min-height: 85px; }
+  .command-guide { font-size: 10px; }
+  .feed-card, .contribution-card { padding: 16px; }
+  .result-panel { max-width: 96%; }
+  .game-shell.show-result { height: 410px; aspect-ratio: auto; }
+  .result-panel { padding: 16px 14px; }
+  .result-panel h2 { font-size: 21px; margin: 9px 0 4px; }
+  .result-panel > p { margin: 5px 0; }
+  .result-numbers { margin: 9px 0; padding: 8px 0; }
+  .result-ranks { margin-bottom: 8px; line-height: 1.4; }
+}

@@ -1,0 +1,44 @@
+.battle-progress { display: flex; align-items: center; gap: 20px; margin: -6px 0 20px; }
+.battle-progress ol { list-style: none; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; padding: 0; margin: 0; flex: 1; }
+.battle-progress li { display: flex; align-items: center; gap: 7px; border-top: 2px solid #2a3b3c; padding: 9px 4px 0; color: #637f76; }
+.battle-progress li span { font: 10px Consolas, monospace; opacity: .8; }
+.battle-progress li b { font-size: 10px; font-weight: 400; white-space: nowrap; }
+.battle-progress li.current { border-color: #e8bb77; color: #e4c38f; }
+.battle-progress li.past { border-color: #689b7d; color: #93b395; }
+#wave-next { min-width: 126px; text-align: right; font-size: 10px; color: #90ab95; }
+.tactical-strip { display: flex; align-items: center; gap: 12px; padding: 13px 17px; border-top: 1px solid #344c43; background: #162b2b; min-height: 63px; }
+.tactical-icon { color: #d7bd8c; font-size: 25px; }
+.tactical-strip b { display: block; font-size: 12px; color: #cfceaf; font-weight: 500; margin-bottom: 5px; }
+.tactical-strip div > span { display: block; font-size: 10px; color: #95ad9d; line-height: 1.6; }
+.tactical-strip[data-tone=warn] { background: #342b27; border-color: #78634a; }
+.tactical-strip[data-tone=warn] b { color: #f0be8e; }
+.tactical-strip[data-tone=good] { background: #1d342e; }
+.lane-choices button.selected { background: #385043; border-color: #879c68; color: #d8dbad; opacity: 1; }
+.tower-choice.selected:disabled { opacity: 1; }
+.tower-choice:not(.selected):disabled { opacity: .45; }
+.cheer-button:disabled { opacity: .6; }
+.vote-options button.selected { background: #526143; border-color: #e0c080; color: #f2e7c3; box-shadow: inset 0 0 0 1px #e0c080; }
+.result-panel .result-tip { font-size: 11px; line-height: 1.7; color: #d8b591; margin: -5px 0 17px; }
+.result-tip:empty { display: none; }
+@media (max-width: 1180px) {
+  .battle-progress { gap: 12px; }
+  .battle-progress li { gap: 4px; }
+  .battle-progress li b { font-size: 9px; }
+  #wave-next { min-width: 108px; font-size: 9px; }
+  .result-panel .result-tip { font-size: 10px; }
+}
+@media (max-width: 900px) {
+  .battle-progress { display: block; }
+  #wave-next { display: block; margin-top: 10px; }
+}
+@media (max-width: 580px) {
+  .battle-progress { margin: 0 0 15px; }
+  .battle-progress li { padding: 7px 0 0; gap: 0; flex-direction: column; align-items: flex-start; }
+  .battle-progress li b { font-size: 8px; margin-top: 4px; }
+  .tactical-strip { padding: 12px; gap: 9px; }
+  .tactical-strip b { font-size: 11px; }
+  .tactical-strip div > span { font-size: 9px; }
+  .result-panel { padding: 13px 15px; }
+  .result-panel h2 { margin-top: 10px; }
+  .result-panel .result-tip { font-size: 9px; margin: -3px 0 10px; }
+}

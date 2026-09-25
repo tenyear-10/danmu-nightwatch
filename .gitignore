@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.vite/
+artifacts/
+HANDOFF.md
+交给其他模型的开发任务书.md
